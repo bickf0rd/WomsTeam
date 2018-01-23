@@ -82,11 +82,16 @@ class MessageForum(AbstractDateTimeModel):
 
 class UserForum(AbstractDateTimeModel):
     """Профиль юзера на форуме"""
-    user = models.ForeignKey(User, verbose_name='Профиль пользователя на форуме',
-                             related_name='user_forum', on_delete=models.CASCADE)
+    user = models.ForeignKey(User,
+                             verbose_name='Профиль пользователя на форуме',
+                             related_name='user_forum',
+                             on_delete=models.CASCADE)
 
-    name = models.CharField(verbose_name='Имя пользователя', max_length=50, blank=True)
-    views = models.PositiveIntegerField(verbose_name='Счетчик сообщений пользователя', default=0)
+    name = models.CharField(verbose_name='Имя пользователя',
+                            max_length=50,
+                            blank=True)
+    views = models.PositiveIntegerField(verbose_name='Счетчик сообщений пользователя',
+                                        default=0)
 
     class Meta:
         verbose_name = 'Профиль пользователя'
