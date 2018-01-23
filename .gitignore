@@ -1,4 +1,14 @@
- .idea/*
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/scopes/scope_settings.xml
+.idea/request.iml
+.idea/modules.xml
+.idea/misc.xml
+.idea/encodings.xml
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/dataSources.ids
+.idea/.name
  conf/
  gunicorn.conf.py
 venv

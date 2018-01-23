@@ -1,9 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.conf import settings
+from .validators.image_dimensions import ImageDimensions
 
-User = settings.AUTH_USER_MODEL
 
 class Profile(models.Model):
     """ Класс модели профиля пользователя
@@ -11,7 +11,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField("Дата рождения", null=True)
     avatar = models.ImageField("Аватар", upload_to="client/",
-                               null=True, blank=True)
+                               null=True, blank=True,validators = [ImageDimensions(200,200)])
 
     class Meta:
         verbose_name = "Профиль пользователя"
