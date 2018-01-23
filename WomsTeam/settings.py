@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     'faq',
     'blog',
     'ticket',
-    'sl_forum'
+    'sl_forum',
+    'courses'
 ]
 
 MIDDLEWARE = [

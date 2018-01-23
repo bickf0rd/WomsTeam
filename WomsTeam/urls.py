@@ -27,7 +27,8 @@ urlpatterns = [
     path('ticket/', include('ticket.urls')),
     path('client/', include('client.urls', namespace='client')),
     path('forum/', include('sl_forum.urls')),
-    
+    path('courses/', include('courses.urls')),
+
     path('summernote/', include('django_summernote.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
