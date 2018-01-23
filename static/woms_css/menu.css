@@ -1,0 +1,25 @@
+/*Классы меню*/
+.menu-blue {
+    width: 100%;
+    height: 50px;
+}
+.menu-blue ul {
+    display: flex;
+    justify-content: start;
+}
+.menu-blue li {
+    margin: 0 10px 0 0;
+    list-style: none;
+}
+.menu-blue li a{
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #3e92ce;
+    background-color: #3e92cc;
+}
+.menu-blue li a:hover{
+    color: #000;
+    border: 1px solid #3e92ce;
+    background-color: #fff;
+}

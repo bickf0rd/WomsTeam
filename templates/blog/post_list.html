@@ -1,5 +1,10 @@
-{% for post in posts %}
-  <a href="{% url 'post_single' pk=post.id  %}">{{post.title}}</a><br>
-  <div style="">{{post.mini_text|safe}}</div>
-  {{post.published_date}}<hr>
-{% endfor %}
+{% extends 'base.html' %}
+{% block title %} {% endblock title %}
+{% block left %} {% endblock left %}
+{% block content %}
+    {% for post in posts %}
+      <a href="{% url 'post_single' pk=post.id  %}">{{post.title}}</a><br>
+      <div style="">{{post.mini_text|safe}}</div>
+      {{post.published_date}}<hr>
+    {% endfor %}
+{% endblock content %}

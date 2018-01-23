@@ -9,8 +9,8 @@
 .idea/dataSources.local.xml
 .idea/dataSources.ids
 .idea/.name
- conf/
- gunicorn.conf.py
+conf/
+gunicorn.conf.py
 venv
 local_settings.py
 __pycache__/

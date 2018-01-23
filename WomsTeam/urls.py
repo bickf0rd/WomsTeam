@@ -25,7 +25,7 @@ urlpatterns = [
     path('faq/', include('faq.urls')),
     path('news/', include('blog.urls')),
     path('ticket/', include('ticket.urls')),
-    path('client/', include('client.urls', namespace='client')),
+    path('client/', include('client.urls')),
     path('forum/', include('sl_forum.urls')),
     
     path('summernote/', include('django_summernote.urls')),
