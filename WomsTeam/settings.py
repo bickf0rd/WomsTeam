@@ -52,7 +52,8 @@ INSTALLED_APPS = [
 
     'widget_tweaks',
     'django_summernote',
-    
+    'bootstrap3',
+
     'client',
     'faq',
     'blog',
@@ -100,7 +101,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = '/account/login/'
+LOGIN_URL = '/accounts/login/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackends'
 # EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
@@ -194,7 +195,8 @@ SOCIALACCOUNT_PROVIDERS = {
     },
     # allauth vk
     'weixin': {
-        'AUTHORIZE_URL': 'https://open.weixin.qq.com/connect/oauth2/authorize',  # for media platform
+        # for media platform
+        'AUTHORIZE_URL': 'https://open.weixin.qq.com/connect/oauth2/authorize',
     }
 }
 
@@ -217,7 +219,9 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 ]
 
-ugettext = lambda s: s
+
+def ugettext(s): return s
+
 
 LANGUAGES = (
     ('ru', 'Russian'),

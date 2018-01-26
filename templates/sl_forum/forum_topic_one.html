@@ -1,0 +1,33 @@
+<!-- Выводим темы отсортированные по данному разделу -->
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <p>Название Темы</p>
+    <h1>{{ topic.title }}</h1>
+        <p> Создана</p>
+        <p>{{ topic.created }}</p>
+        <p>Описание Темы</p>
+    <p>{{ topic.text }}</p>
+    </div>
+
+    <!-- Выводим сообщения по теме -->
+    <div>
+        <h4>Сообщения:</h4>
+        {% for foo in message %}
+        <h4>Пользователь {{ foo.user }}</h4>
+            <p>у пользователя {{ views.views }} сообщений</p>
+        <p>Дата {{ foo.created }}</p>
+            <h4>Оставил отзыв</h4>
+        <p>{{ foo.text }}</p>
+        {% endfor %}
+    </div>
+
+    <!-- Форма оставить отзыв -->
+    <div>
+        <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{ form.as_p }}
+        <button>Отправить</button>
+    </form>
+    </div>
+{% endblock content %}

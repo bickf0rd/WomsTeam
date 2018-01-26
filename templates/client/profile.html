@@ -1,11 +1,16 @@
-Пользователь: {{user.username}} </br>
-Имя: {{user.first_name}} </br>
-Фамилия: {{user.last_name}} </br>
-День рождения: {{user.profile.birth_date}} </br>
-Аватар:
-    {% if user.profile.avatar %}
-        <img src="{{user.profile.avatar.url}}">
-    {% endif %}
-</br>
-</br>
-<a href="{% url 'client:update_profile' %}">Изменить профиль</a>
+{% extends 'base.html' %}
+{% block title %} {% endblock title %}
+{% block left %} {% endblock left %}
+{% block content %}
+    Пользователь: {{user.username}} </br>
+    Имя: {{user.first_name}} </br>
+    Фамилия: {{user.last_name}} </br>
+    День рождения: {{user.profile.birth_date}} </br>
+    Аватар:
+        {% if user.profile.avatar %}
+            <img src="{{user.profile.avatar.url}}">
+        {% endif %}
+    </br>
+    </br>
+    <a href="{% url 'update_profile' %}">Изменить профиль</a>
+{% endblock content %}

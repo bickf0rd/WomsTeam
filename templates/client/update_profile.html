@@ -1,5 +1,10 @@
-Пользователь: {{user.username}} </br>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %} {{ user_form.as_p }} {{ profile_form.as_p }}
-    <button type=" submit ">Сохранить изменения</button>
-</form>
+{% extends 'base.html' %}
+{% block title %} {% endblock title %}
+{% block left %} {% endblock left %}
+{% block content %}
+    Пользователь: {{user.username}} </br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} {{ user_form.as_p }} {{ profile_form.as_p }}
+        <button type=" submit ">Сохранить изменения</button>
+    </form>
+{% endblock content %}

@@ -4,27 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="{# meta.desc #}">
-    <meta name="keywords" content="{# meta.keywords #}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <meta name="description" content="{% block desc %}{% endblock desc %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
+    <link rel="stylesheet" href="{% static 'woms_css/menu.css' %}" />
+    <link rel="stylesheet" href="{% static 'woms_css/style.css' %}" />
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
-{% block left %}{% endblock left %}
-
-<div class="main">
-    {% block content %}
-    {% endblock content %}
-    <footer>
-        <div class="footer">
-            {% block footer %}
-                DjangoChannel.com 2018
-            {% endblock footer %}
+    <div class="page">
+        <div class="menu-blue">
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">Главная</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog' %}">Блог</a>
+                </li>
+                <li>
+                    <a href="{% url 'forum_start' %}">Форум</a>
+                </li>
+                <li>
+                    <a href="{% url 'profile' %}">Кабинет</a>
+                </li>
+                <li>
+                    <a href="{% url 'ticket' %}">Тикеты</a>
+                </li>
+                <li>
+                    <a href="{% url 'faq' %}">FAQ</a>
+                </li>
+                {% if user.is_active %}
+                    <li>
+                        <a href="{% url 'account_logout' %}">Выход</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'account_login' %}">Вход</a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
-    </footer>
-</div>
 
-{% block right %}{% endblock right %}
+        {% block left %}{% endblock left %}
 
+        <div class="main">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+        {% block right %}{% endblock right %}
+
+        <footer>
+            <div class="footer">
+                    DjangoChannel.com 2018
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

@@ -31,7 +31,8 @@ class TopicOneView(TemplateView):
 
     def get_context_data(self, **kwargs):
         kwargs['topic'] = TopicForum.objects.get(pk=kwargs['pk'])
-        kwargs['message'] = MessageForum.objects.filter(topic=kwargs['pk']).order_by('created')
+        kwargs['message'] = MessageForum.objects.filter(
+            topic=kwargs['pk']).order_by('created')
         kwargs['form'] = MessageForm()
         kwargs['views'] = UserForum.objects.get(pk=kwargs['pk'])
         return super(TopicOneView, self).get_context_data(**kwargs)
@@ -49,7 +50,8 @@ class TopicOneView(TemplateView):
                     user.user = request.user
                     user.views += 1
                     user.save(update_fields=['user', 'views'])
-                return HttpResponseRedirect(reverse('forum_topic_one', args=[str(topic.pk)]))
+                return HttpResponseRedirect(
+                    reverse('forum_topic_one', args=[str(topic.pk)]))
 
 
 class TopicCreateView(CreateView):
@@ -63,4 +65,5 @@ class TopicCreateView(CreateView):
         obj = form.save(commit=False)
         obj.user = self.request.user
         obj.save()
-        return HttpResponseRedirect(reverse('forum_topic_one', args=[str(obj.pk)]))
+        return HttpResponseRedirect(
+            reverse('forum_topic_one', args=[str(obj.pk)]))

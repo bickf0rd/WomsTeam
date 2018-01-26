@@ -35,11 +35,17 @@ class SectionForum(AbstractDateTimeModel):
 
 class TopicForum(AbstractDateTimeModel):
     """Модель реализует темы на форуме"""
-    user = models.ForeignKey(User, verbose_name='Пользователь',
-                             related_name='topic_forum', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User,
+        verbose_name='Пользователь',
+        related_name='topic_forum',
+        on_delete=models.CASCADE)
 
-    section = models.ForeignKey(SectionForum, verbose_name='Укажите к какому разделу относиться тема',
-                                related_name='section_forum', on_delete=models.CASCADE)
+    section = models.ForeignKey(
+        SectionForum,
+        verbose_name='Укажите к какому разделу относиться тема',
+        related_name='section_forum',
+        on_delete=models.CASCADE)
 
     title = models.CharField('Укажите название темы на форуме', max_length=250)
     text = models.TextField('Текст, описание темы')
@@ -59,11 +65,17 @@ class TopicForum(AbstractDateTimeModel):
 
 class MessageForum(AbstractDateTimeModel):
     """Модель сообщений которые оставляют пользователи на форуме"""
-    user = models.ForeignKey(User, verbose_name='Пользователь',
-                             related_name='message_forum', on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User,
+        verbose_name='Пользователь',
+        related_name='message_forum',
+        on_delete=models.CASCADE)
 
-    topic = models.ForeignKey(TopicForum, verbose_name='Укажите к какой теме относиться сообщение',
-                              related_name='message_topic', on_delete=models.CASCADE)
+    topic = models.ForeignKey(
+        TopicForum,
+        verbose_name='Укажите к какой теме относиться сообщение',
+        related_name='message_topic',
+        on_delete=models.CASCADE)
 
     text = models.TextField('Текст сообщения')
 
@@ -82,16 +94,19 @@ class MessageForum(AbstractDateTimeModel):
 
 class UserForum(AbstractDateTimeModel):
     """Профиль юзера на форуме"""
-    user = models.ForeignKey(User,
-                             verbose_name='Профиль пользователя на форуме',
-                             related_name='user_forum',
-                             on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User,
+        verbose_name='Профиль пользователя на форуме',
+        related_name='user_forum',
+        on_delete=models.CASCADE)
 
-    name = models.CharField(verbose_name='Имя пользователя',
-                            max_length=50,
-                            blank=True)
-    views = models.PositiveIntegerField(verbose_name='Счетчик сообщений пользователя',
-                                        default=0)
+    name = models.CharField(
+        verbose_name='Имя пользователя',
+        max_length=50,
+        blank=True)
+    views = models.PositiveIntegerField(
+        verbose_name='Счетчик сообщений пользователя',
+        default=0)
 
     class Meta:
         verbose_name = 'Профиль пользователя'
