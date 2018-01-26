@@ -20,4 +20,6 @@ __pycache__/
 .pyc
 .vscode
 db.sqlite3
-media/
+media/home/
+media/blog/
+media/client/
