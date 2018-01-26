@@ -3,10 +3,8 @@ from django.core.exceptions import ValidationError
 
 
 class ImageDimensions:
+    """ Проверка изображения по высоте и ширине
     """
-        Проверка изображения по высоте и ширине
-    """
-
     def __init__(self, width, height):
         self.__width, self.__height = width, height
 

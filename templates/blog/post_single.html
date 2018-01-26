@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
-{% block title %} {% endblock title %}
+{% block desc %}{{post.description}}{% endblock desc %}
+{% block keywords %}{{post.keywords}}{% endblock keywords %}
+{% block title %}{{post.title}}{% endblock title %}
 {% block left %} {% endblock left %}
 {% block content %}
     {{post.title}}<hr>

@@ -48,6 +48,8 @@ class Post(models.Model):
                                  null=True,
                                  on_delete=models.SET_NULL)
     tag = models.ManyToManyField(Tag, verbose_name="Тег", blank=True)
+    description = models.CharField("Описание страницы", max_length=50, null=True)
+    keywords = models.CharField("Ключивае слова страницы", max_length=50, null=True)
 
     class Meta:
         verbose_name = "Пост"
@@ -64,7 +66,6 @@ class Post(models.Model):
 class Comment(models.Model):
     """ Класс модели комментария
     """
-    # id = models.IntegerField(primary_key=True, auto_created=True)
     user = models.ForeignKey(
         'auth.User',
         verbose_name="Автор",

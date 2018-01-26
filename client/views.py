@@ -6,6 +6,8 @@ from .forms import UserForm, ProfileForm
 
 @login_required
 def update_profile(request):
+    """Редактирование профиля пользователя
+    """
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
         profile_form = ProfileForm(
@@ -29,4 +31,6 @@ def update_profile(request):
 
 @login_required
 def client_profile(request):
+    """Вывод профиля пользователя
+    """
     return render(request, 'client/profile.html',)

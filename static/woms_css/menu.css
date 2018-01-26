@@ -2,6 +2,8 @@
 .menu-blue {
     width: 100%;
     height: 50px;
+    display: flex;
+    justify-content: flex-end;
 }
 .menu-blue ul {
     display: flex;
@@ -15,11 +17,13 @@
     padding: 10px;
     color: #fff;
     text-decoration: none;
-    border: 1px solid #3e92ce;
     background-color: #3e92cc;
+    transition: border 0.7s ease-in-out,
+                background-color 0.7s ease-in-out,
+                color 0.7s ease-in-out;
 }
 .menu-blue li a:hover{
     color: #000;
-    border: 1px solid #3e92ce;
+    border-bottom: 3px solid #3e92cc;
     background-color: #fff;
 }

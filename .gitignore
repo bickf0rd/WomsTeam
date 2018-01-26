@@ -1,3 +1,4 @@
+.idea/
 .idea/workspace.xml
 .idea/vcs.xml
 .idea/scopes/scope_settings.xml
@@ -16,5 +17,7 @@ local_settings.py
 __pycache__/
 */__pycache__/
 *.py[cod]
+.pyc
 .vscode
 db.sqlite3
+media/
