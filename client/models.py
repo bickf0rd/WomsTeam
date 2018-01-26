@@ -12,7 +12,7 @@ class Profile(models.Model):
     birth_date = models.DateField("Дата рождения", null=True)
     avatar = models.ImageField("Аватар", upload_to="client/",
                                null=True, blank=True)
-                               #validators = [ImageDimensions(200,200)])
+    # validators = [ImageDimensions(200,200)])
 
     class Meta:
         verbose_name = "Профиль пользователя"

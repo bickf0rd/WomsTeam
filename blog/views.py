@@ -17,7 +17,8 @@ def post_single(request, pk):
     """
     post = Post.objects.get(id=pk)
     comments = Comment.objects.filter(post=post.pk)
-    return render(request, "blog/post_single.html", {"post": post, "comments": comments})
+    return render(request, "blog/post_single.html",
+                  {"post": post, "comments": comments})
 
 
 @csrf_exempt
