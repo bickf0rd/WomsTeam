@@ -8,6 +8,6 @@ install:
     - "pip install -r req.txt"
 before_script:
     - "psql -c 'create database travis_ci_test;' -U postgres"
-    - "pep8 --exclude=migrations,templates,settings.py ."
+    - "pep8 --exclude=migrations, templates, settings.py ."
 script:
     - "python manage.py test"
