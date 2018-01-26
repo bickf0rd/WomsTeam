@@ -21,5 +21,7 @@ class ProfileForm(forms.ModelForm):
         fields = ('birth_date', 'avatar',)
         localized_fields = ('birth_date',)
         widgets = {
-            'birth_date': forms.TextInput(attrs={'placeholder': 'Дата рождения'}),
+            'birth_date': forms.TextInput(
+                attrs={'placeholder': 'Дата рождения'}
+            ),
         }
