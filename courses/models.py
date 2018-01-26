@@ -23,7 +23,7 @@ class Courses(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Автор курса', null=True, on_delete=models.SET_NULL)
     category = models.ForeignKey(Category, verbose_name="Категория", null=True, on_delete=models.SET_NULL)
     title = models.CharField('Название', max_length=50)
-    price = models.IntegerField()
+    price = models.IntegerField(verbose_name='Цена')
 
     class Meta:
         verbose_name = "Курс"
@@ -47,7 +47,7 @@ class Task(models.Model):
     answer = models.TextField("Ответ учителя")
 
     class Meta:
-        verbose_name = "Задача"
+        verbose_name = "Задачу"
         verbose_name_plural = "Задачи"
 
     def __str__(self):

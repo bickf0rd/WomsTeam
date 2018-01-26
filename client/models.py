@@ -11,8 +11,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birth_date = models.DateField("Дата рождения", null=True)
     avatar = models.ImageField("Аватар", upload_to="client/",
-                               null=True, blank=True)
-    # validators = [ImageDimensions(200,200)])
+                               null=True, blank=True, validators = [ImageDimensions(200,200)])
 
     class Meta:
         verbose_name = "Профиль пользователя"
