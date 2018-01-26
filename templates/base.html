@@ -27,8 +27,20 @@
                     <a href="{% url 'profile' %}">Кабинет</a>
                 </li>
                 <li>
-                    <a href="{% url 'ticket' %}">FAQ</a>
+                    <a href="{% url 'ticket' %}">Тикеты</a>
                 </li>
+                <li>
+                    <a href="{% url 'faq' %}">FAQ</a>
+                </li>
+                {% if user.is_active %}
+                    <li>
+                        <a href="{% url 'account_logout' %}">Выход</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'account_login' %}">Вход</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
 

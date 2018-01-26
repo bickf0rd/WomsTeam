@@ -1,0 +1,10 @@
+<!-- Выводим разделы -->
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+    <h1>Разделы</h1>
+    <h3>{% for foo in section %}</h3>
+        <a href="{{ foo.get_absolute_url }}"><p>{{ foo.title }}</p></a>
+        {% endfor %}
+    </div>
+{% endblock content %}

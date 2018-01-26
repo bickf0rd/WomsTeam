@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     'widget_tweaks',
     'django_summernote',
+    'bootstrap3',
     
     'client',
     'faq',
@@ -99,7 +100,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = '/account/login/'
+LOGIN_URL = '/accounts/login/'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackends'
 # EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
 
