@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'blog',
     'ticket',
     'sl_forum',
-    'courses'
+    'courses',
+    'webinar'
 ]
 
 MIDDLEWARE = [
